@@ -1,17 +1,24 @@
 package sk.stuba.fei.uim.oop;
 
+import java.io.*;
+
 public class Main {
     public static void main(String[] args) {
-       vonkajisFor:
-        for(int i =1;i<5;i++) {
-           for (int j= 10;j>0;j--){
-               System.out.println("---");
-               if (i%3 == 0){
-                   break vonkajisFor;
-               }
-               System.out.println(i+" "+j);
-           }
+       InputStream is = Main.class.getClassLoader().getResourceAsStream("textFile.txt");
+       if (is == null){
+           System.out.println("Tento file neni v resources");
+           return;
        }
-        System.out.println("koniec");
+       InputStreamReader isr = new InputStreamReader(is);
+
+
+       BufferedReader reader = new BufferedReader(isr);
+        try {
+            for (String line = reader.readLine();line != null ;line =reader.readLine()){
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
