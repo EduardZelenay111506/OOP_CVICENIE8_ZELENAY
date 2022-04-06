@@ -12,6 +12,7 @@ public class Main {
         frame.setLayout(new BorderLayout());
         frame.setFocusable(true);
 
+
         Logic logic = new Logic(frame);
         frame.addKeyListener(logic);
 
@@ -30,8 +31,9 @@ public class Main {
         menu.add(slider);
         menu.add(logic.getLabel());
 
-        frame.add(menu);
+        frame.add(menu, BorderLayout.PAGE_END);
 
         frame.setVisible(true);
+
     }
 }

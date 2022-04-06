@@ -13,8 +13,9 @@ public class Logic implements KeyListener, ChangeListener {
     private JLabel label;
     private JFrame frame;
     public Logic(JFrame frame) {
-        this.label=new JLabel();
         this.frame=frame;
+        this.label=new JLabel("Zaciatocny text");
+
     }
 
     @Override
